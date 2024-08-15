@@ -1,11 +1,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
-import tick from "../../assets/tick.png";
-import not_tick from "../../assets/not_tick.png";
-import deleteIcon from "../../assets/delete.png";
+import tick from "../assets/tick.png";
+import not_tick from "../assets/not_tick.png";
+import deleteIcon from "../assets/delete.png";
 
-const TodoItems = ({ text, id, isCompleted, deleteTodo, toggleTodo }) => {
+const TodoItems = ({
+  text,
+  priority,
+  id,
+  isCompleted,
+  deleteTodo,
+  toggleTodo,
+}) => {
   return (
     <div className="flex items-center my-3 gap-2">
       <div
@@ -21,6 +28,7 @@ const TodoItems = ({ text, id, isCompleted, deleteTodo, toggleTodo }) => {
           }`}
         >
           {text}
+          {"    (" + priority + ")"}
         </p>
       </div>
       <img

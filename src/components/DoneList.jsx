@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import TodoItems from "../todoItems/TodoItem";
+import TodoItems from "../components/TodoItem";
 
 const DoneList = ({ todoList, deleteTodo, toggleTodo }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +22,7 @@ const DoneList = ({ todoList, deleteTodo, toggleTodo }) => {
           placeholder="Search completed tasks..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-transparent border-none outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600"
+          className="bg-transparent border-none outline-none flex-1 h-12 pl-6 pr-2 placeholder:text-slate-600"
         />
       </div>
       <div>
@@ -30,6 +30,7 @@ const DoneList = ({ todoList, deleteTodo, toggleTodo }) => {
           <TodoItems
             key={index}
             text={items.text}
+            priority={items.priority}
             deleteTodo={deleteTodo}
             id={items.id}
             toggleTodo={toggleTodo}
